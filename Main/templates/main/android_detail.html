@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+
+<div class="p-2 mt-12 sm:ml-32 ">
+    <h1 class="text-black dark:text-white mb-12 text-center text-5xl font-extralight">{{ project.name }}</h1>
+    
+    <div class="flex justify-center items-center space-x-8"> 
+        <div class="flex-shrink-0"> 
+            <img class="w-64 h-auto rounded-xl cursor-pointer" data-modal-target="first_picture" data-modal-toggle="first_picture" src="{{ project.thumbnails1.url }}" alt="{{ project.name }}">
+            
+            <div id="first_picture" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative w-full max-w-xs max-h-full mx-auto">
+                    <div class="relative rounded-2xl  p-0 overflow-hidden"> 
+                        <img class="h-auto w-10/12 mx-auto rounded-2xl" data-modal-target="first_picture" data-modal-toggle="first_picture" src="{{ project.thumbnails1.url }}" alt="{{ project.name }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
+        <div class="mt-2 flex flex-col justify-between gap-y-2">
+            <!-- Première image avec modal -->
+            <img class="w-20 h-auto rounded-md cursor-pointer" data-modal-target="second_picture" data-modal-toggle="second_picture" src="{{ project.thumbnails2.url }}" alt="{{ project.name }}">
+            <div id="second_picture" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative w-full max-w-xs max-h-full mx-auto"> 
+                    <div class="relative rounded-2xl  p-0 overflow-hidden"> 
+                        <img class="h-auto w-10/12 mx-auto rounded-2xl" data-modal-target="second_picture" data-modal-toggle="second_picture" src="{{ project.thumbnails2.url }}" alt="{{ project.name }}">
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Deuxième image avec modal -->
+            <img class="w-20 h-auto rounded-md cursor-pointer" data-modal-target="third_picture" data-modal-toggle="third_picture" src="{{ project.thumbnails3.url }}" alt="{{ project.name }}">
+            <div id="third_picture" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative w-full max-w-xs max-h-full mx-auto"> 
+                    <div class="relative rounded-2xl  p-0 overflow-hidden"> 
+                        <img class="h-auto w-10/12 mx-auto rounded-2xl" data-modal-target="third_picture" data-modal-toggle="third_picture" src="{{ project.thumbnails3.url }}" alt="{{ project.name }}">
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Troisième image avec modal -->
+            <img class="w-20 h-auto rounded-md cursor-pointer" data-modal-target="fourth_picture" data-modal-toggle="fourth_picture" src="{{ project.thumbnails4.url }}" alt="{{ project.name }}">
+            <div id="fourth_picture" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative w-full max-w-xs max-h-full mx-auto"> 
+                    <div class="relative rounded-2xl  p-0 overflow-hidden"> 
+                        <img class="h-auto w-10/12 mx-auto rounded-2xl" data-modal-target="fourth_picture" data-modal-toggle="fourth_picture" src="{{ project.thumbnails4.url }}" alt="{{ project.name }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-left: 100px" class="w-2/5 h-2/5 bg-white bg-opacity-50 p-8 rounded-xl">
+            <p class="text-black font-bold">{% translate "Description of the application :"%}</p>
+            <p class="my-6 text-sm text-black">{{ project.description }}</p>
+               
+            <p class="text-black font-bold"> {% translate "Objective :"%}</p>
+            <p class="my-6 text-sm text-black">{{ project.objective }}</p>
+            
+            <span class="text-black font-bold inline-flex items-center">
+                <img class="w-10 h-auto mr-2" src="{% static 'images/calendar.png' %}">
+                {% translate "Time of the realization"%}
+            </span>
+            <p class="mt-2 text-black">{{ project.duration_in_days }}{% translate "days"%}</p>
+        
+           
+        </div> 
+    </div>
+</div>
+
+{% endblock %}

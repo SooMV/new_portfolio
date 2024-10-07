@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n  %}
+{% block content %}
+
+<div class="p-2 mt-20 sm:ml-64 ">
+     <!-- Afficher les messages de succès ou d'erreur -->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h1 class="titre text-white flex align-center justify-center text-5xl font-extralight">{% translate "My CV"%}</h1>
+    <div class="flex items-center justify-center">
+        <p class="text-justify text-xl text-white mt-14 w-4/5 font-light">
+            {% translate "Discover my professional background and skills by checking out my resume. You'll find a detailed overview of my experience, education, and the projects I've had the opportunity to work on. Feel free to download or view my CV to learn more about my profile and qualifications." %}
+        </p>    
+    </div>
+    
+    <div class="flex items-center justify-evenly mt-20">
+        <!-- Télécharger mon CV -->
+        <div class="cursor-pointer p-1 rounded-2xl mt-4 w-2/6" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);" data-modal-target="upload_cv" data-modal-toggle="upload_cv">
+            <a href="{% url 'download_my_cv' %}">  <!-- Utilisez le nom de l'URL ici -->
+                <div class="bg-black text-white py-5 px-8 rounded-2xl flex flex-col">
+                    <h3 class="text-white text-center font-semibold">{% translate "Download my CV"%}</h3>
+                    <h4 class="text-white text-center font-light">{% translate "(in PDF format)"%}</h4>
+                </div>
+            </a>
+        </div>
+    
+        <!-- Voir mon CV -->
+        <div data-modal-target="view_cv" data-modal-toggle="view_cv" class="cursor-pointer p-1 rounded-2xl mt-4 w-2/6" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+            <div class="bg-black text-white py-8 px-8 rounded-2xl">
+                <h3 class="text-white text-center font-semibold">{% translate "View my CV"%}</h3>
+            </div>
+        </div>
+        
+        <!-- Modal pour afficher le CV -->
+        <div id="view_cv" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-xl max-h-xl mx-auto">
+                <div class="relative rounded-2xl shadow dark:bg-gray-700 p-0 overflow-hidden">
+                    <img class="h-auto w-10/12 mx-auto rounded-2xl" data-modal-target="view_cv" data-modal-toggle="view_cv" src="{% static 'images/mon_cv.png' %}" alt="{% translate "View my CV" %}">
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+{% endblock %}

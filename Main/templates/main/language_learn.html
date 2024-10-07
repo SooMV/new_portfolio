@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="p-2 mt-20 sm:ml-64 ">
+    <h1 class="text-white flex align-center justify-center text-5xl font-extralight">{% translate "Technology I have learned"%}</h1>
+
+    <div class="flex items-center justify-center">
+        <div class="w-4/5 grid grid-cols-2 gap-6 mt-20">
+          
+            
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-12 h-auto mr-4" src="{% static 'images/swiftui_icon2.svg' %}" alt="SwiftUI logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "SwiftUI" %}</h3>
+                        <p class="text-white font-light">{% translate "Creating native iOs application" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-10 h-auto mr-4" src="{% static 'images/kotlin_icon.png' %}" alt="Kotlin logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "Kotlin" %}</h3>
+                        <p class="text-white font-light">{% translate "Creating native Android application" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-10 h-auto mr-4" src="{% static 'images/django_icon.png' %}" alt="Django logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "Django" %}</h3>
+                        <p class="text-white font-light">{% translate "Website creation" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-10 h-auto mr-4" src="{% static 'images/python_icon.png' %}" alt="Python logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "Python" %}</h3>
+                        <p class="text-white font-light">{% translate "Website creation" %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-10 h-auto mr-4" src="{% static 'images/symfony_icon.png' %}" alt="Symfony logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "Symfony" %}</h3>
+                        <p class="text-white font-light">{% translate "Website creation" %}</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="p-1 rounded-2xl mt-4" style="background: linear-gradient(90deg, #FFDA1C, #E30C0C);">
+                <div class="bg-black text-white p-6 rounded-2xl flex">
+                    <div>
+                        <img class="w-10 h-auto mr-4" src="{% static 'images/vue_icon.png' %}" alt="Vue.Js logo">
+                    </div>
+                    <div class="flex flex-col">
+                        <h3 class="text-white font-semibold">{% translate "Vue.js" %}</h3>
+                        <p class="text-white font-light">{% translate "Website creation" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

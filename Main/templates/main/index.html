@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+<div class="p-2 mt-20 sm:ml-64 ">
+   <div class="absolute top-0 right-0 m-4 flex space-x-4">
+        <a href="/en/">
+            <img class="rounded w-10 h-6 border border-white" src="{% static 'images/Flag_UK.png' %}" alt="{% translate 'English' %}">
+        </a>
+        <a href="/fr/">
+            <img class="rounded w-10 h-6 border border-white" src="{% static 'images/Flag_France.svg' %}" alt="{% translate 'French' %}">
+        </a>
+    </div>
+
+    <h1 class="text-white flex align-center justify-center text-5xl font-extralight">{% translate "Welcome" %}</h1>
+
+    <div class="flex items-center justify-center">
+        <div class="w-4/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-20">
+            <a href="{% url "ios_projects" %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/swiftui_icon2.svg' %}" alt="{% translate 'swift ui logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "iOs Applications" %}</span>
+                </div> 
+            </a>
+
+            <a href="{% url 'login' %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/authentification.svg' %}" alt="{% translate 'swift ui logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "Authentification" %}</span>
+                </div>
+            </a>
+            <a href="{% url "contact" %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/contact_logo.svg' %}" alt="{% translate 'Profile logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "Contact" %}</span>
+                </div>
+            </a>
+            <a href="{% url 'language_learn' %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/list_of_skills.svg' %}" alt="{% translate 'list logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "List of"%}</span>
+                    <span class="text-center text-white font-extralight">{% translate "skills" %}</span>
+                </div>
+            </a>
+            <a href="{% url 'my_cv' %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/cv_logo.svg' %}" alt="{% translate 'list logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "Downwload" %}</span>
+                    <span class="text-center text-white font-extralight">{% translate "my CV" %}</span>
+                </div>
+            </a>
+            <a href="{% url "python_projects" %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/logo_python.svg' %}" alt="{% translate 'Python logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "Python Project" %}</span>
+                </div>
+            </a>
+            <a href="{% url 'my_profile' %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/profile_logo.svg' %}" alt="{% translate 'Profile logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "My profile" %}</span>
+                </div>
+            </a>
+            <a href="{% url "android_projects" %}">
+                <div class="flex flex-col items-center">
+                    <img class="rounded w-32 h-32" src="{% static 'images/logo_android.svg' %}" alt="{% translate 'Profile logo' %}">
+                    <span class="mt-2 text-center text-white font-extralight">{% translate "Android Applications" %}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

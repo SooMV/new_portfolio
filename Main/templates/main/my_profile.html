@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="p-2 mt-20 sm:ml-64 ">
+    <h1 class="text-white flex  align-center justify-center text-5xl font-extralight">{% translate "My profile"%}</h1>
+
+    <div class="flex items-center justify-center flex-col">
+        <p class="text-justify text-2xl text-white mt-14 w-4/5 font-light" >
+            {% translate "Passionate about technology from a young age, I first began my career change journey by attending a UX design bootcamp. This experience allowed me to master the fundamentals of several Adobe suite software tools. However, I quickly realized that development was a better fit for my skills and aspirations." %}
+        </p> 
+
+        <p class="text-justify text-2xl text-white mt-14 w-4/5 font-light">{% translate "That's how I shifted my focus towards a Web and Mobile Web Developer training program, where I learned to design both the front-end and back-end of a website. During my internship, I had the opportunity to develop an Android e-commerce application, which marked my introduction to mobile app development." %}</p> 
+
+        <p class="text-justify text-2xl text-white mt-14 w-4/5 font-light">{% translate "Building on this first experience, I chose to continue my education by specializing in iOS application development, with a focus on SwiftUI. This tool, at the crossroads of design and development, strengthened my expertise in both essential areas for creating modern and high-performance applications." %}</p> 
+    </div>
+</div>
+
+
+
+
+{% endblock %}

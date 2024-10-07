@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+<div class=" p-2 mt-12 sm:ml-64 ">
+    
+    <h1 class="text-black dark:text-white mb-20 flex align-center justify-center text-5xl font-extralight">{% translate "If you want to keep relations"%}</h1>
+    <div class=" flex align-center justify-center">
+    <div class="p-8 space-y-6 bg-gray-200 rounded-3xl shadow-md w-full max-w-md ">
+        
+           
+        
+                <form method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <label for="name" class="block text-black text-sm font-medium text-gray-700 my-6"></label>
+                    <input type="text" id="name" name="name" placeholder="{% translate "Your name"%}" required
+                        class="block w-full my-2 px-3 py-2 border border-gray-300 rounded-full shadow-sm placeholder-gray-400
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+
+                    <label for="subject" class="block text-black text-sm font-medium text-gray-700 my-6"></label>
+                    <input type="text" id="subject" name="subject" required placeholder="{% translate "The subject of your request"%}"
+                        class="my-2 block w-full px-3 py-2 border border-gray-300 rounded-full shadow-sm placeholder-gray-400
+                                focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+
+                    <label for="message" class="block text-black text-sm font-medium text-gray-700 my-6"></label>
+                    <textarea name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500    dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="{% translate "Please enter your message here..."%}" id="message"></textarea>
+                    <br>
+                    <button type='submit' class="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-black ">{% translate "Send"%}</button>
+                </form>
+            </div> 
+        </div>
+        </div>
+  
+
+    
+
+
+
+
+{% endblock %}

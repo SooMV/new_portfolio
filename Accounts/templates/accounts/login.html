@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class=" p-2 mt-12 sm:ml-64 ">
+
+    <h1 class="text-white mb-12 flex align-center justify-center text-5xl font-extralight">{% translate "Login"%}</h1>
+    
+    <div class="flex align-center justify-center">
+    <div class="p-8 space-y-6 bg-gray-200 rounded-3xl shadow-md w-full max-w-md ">
+
+        <form class="space-y-6" method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="container">
+                <div>
+                    <label for="id_email" class="block text-black text-sm font-medium text-gray-700 my-2">{% translate "Email"%}</label>
+                    {{ form.email }}
+                    {% for error in form.email.errors %}
+                        <p class="text-red-500">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div>
+                    <label for="id_password" class="block text-black text-sm font-medium text-gray-700 my-2">{% translate "Password"%}</label>
+                    {{ form.password }}
+                    {% for error in form.password.errors %}
+                        <p class="text-red-500">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                {{ form.captcha }}
+                {% for error in form.captcha.errors %}
+                    <p class="text-red-500">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-black ">
+            {% translate "Let's go"%}
+            </button>
+            <div class="container mt-7">
+                <p>{% translate "Do not have an account ?"%} <a class="mx-1" href="{% url 'signup' %}"><u>{% translate "Register here"%}</u></a></p>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+<script>
+    grecaptcha.ready(function() {
+      grecaptcha.execute('{{ RECAPTCHA_PUBLIC_KEY }}', {action: 'submit'}).then(function(token) {
+        var recaptchaResponse = document.getElementById('id_captcha');
+        recaptchaResponse.value = token;
+      });
+    });
+  </script>
+{% endblock %}
