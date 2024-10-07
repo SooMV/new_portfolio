@@ -74,6 +74,7 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',  
     'django.middleware.common.CommonMiddleware',
@@ -167,12 +168,13 @@ EMAIL_USE_TLS = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# ajout du dossier static pour le CSS
-STATICFILES_DIRS = [ BASE_DIR / "static"]
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'  # URL pour accéder aux fichiers statiques
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Répertoire où collectstatic va copier les fichiers
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Dossier de fichiers statiques supplémentaires
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
