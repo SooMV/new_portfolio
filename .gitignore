@@ -1,0 +1,10 @@
+# Ignorer les fichiers et dossiers spécifiques de Django
+*.pyc
+__pycache__/
+
+# Ignorer les fichiers de configuration sensibles
+.env
+
+# Ignorer les fichiers et dossiers spécifiques à l'IDE ou à l'OS
+*.vscode/
+*.DS_Store
