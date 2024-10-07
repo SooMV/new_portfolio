@@ -39,7 +39,7 @@ DEBUG = env('DEBUG')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','votre-futur-alternant.onrender.com', 'votre-futur-alternant.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','votre-futur-alternant.onrender.com', 'votre-futur-alternant-75277ce52c63.herokuapp.com']
 
 
 # Application definition
