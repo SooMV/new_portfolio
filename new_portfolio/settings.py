@@ -34,13 +34,12 @@ env = environ.Env(
 
 # Utiliser les variables d'environnement
 DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','votre-futur-alternant.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','votre-futur-alternant.onrender.com', 'votre-futur-alternant.com']
 
 
 # Application definition
@@ -184,10 +183,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RECAPTCHA_USE_SSL = True
 RECAPTCHA_VERIFY_REQUEST_TIMEOUT = 10  # Délai d'expiration pour la vérification
 
-RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
-RECAPTCHA_PRIVATE_KEY= env("RECAPTCHA_PRIVATE_KEY")
-EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+SECRET_KEY = env('SECRET_KEY')
+RECAPTCHA_PUBLIC_KEY=env("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY=env("RECAPTCHA_PRIVATE_KEY")
+EMAIL_HOST_USER=env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD=env("EMAIL_HOST_PASSWORD")
 
 
 
